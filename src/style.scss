@@ -15,8 +15,7 @@ h1 {
   text-align: center;
 }
 
-button,
-input[type='submit'] {
+button {
   background-color: $primary-color;
   border: 5px solid lighten($primary-color, 30%);
   color: white;
@@ -39,18 +38,6 @@ input {
   }
 }
 
-form {
-  padding: 0.5em;
-  margin: 1em 0;
-  display: flex;
-  flex-direction: column;
-  label {
-    text-align: center;
-    display: block;
-    margin-bottom: 0.5em;
-  }
-}
-
 main {
   background-color: white;
   box-shadow: 1px 1px 3px #666;
@@ -62,7 +49,62 @@ main {
   width: 100vw;
 }
 
+.top-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.color-hex-input {
+  text-align: center;
+  padding: .25em;
+  grid-column-start: 2;
+  &>div {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 2;
+    border: 1px solid grey;
+    padding: 4px;
+    margin: 1rem auto;
+    & input, & div {
+      flex-grow:2;
+      border:none;
+      padding: 0;
+      text-align: center;
+      margin: 0;
+      font-size: 1rem;
+      min-width: 220px;
+      letter-spacing: 1px;
+      &:focus {
+        outline: none;
+      }
+      &::placeholder {
+        color: grey;
+        opacity: .65;
+      }
+    } 
+    & div {
+      padding-top: 7px;
+      font-weight: 400;
+      //letter-spacing: 1px;
+    }
+  }
+}
+
+.hex_btn {
+  border: 1px solid lightseagreen;
+  background: lightseagreen;
+  color: white;
+  border-radius: 2rem;
+  padding: .5rem;
+  font-size: .75rem;
+  cursor: pointer;
+  &:hover {
+    border: inherit;
+  }
+}
+
 .theme-btn {
+  grid-column-start: 3;
   text-align: end;
   margin-bottom: 2em;
   button {
