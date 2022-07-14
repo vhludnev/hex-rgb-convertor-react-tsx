@@ -57,10 +57,10 @@ export const ColorHexInput = () => {
 
   return (
     <div className="color-hex-input">
-      <label style={{lineHeight: '1.5rem'}} htmlFor='hex'>Convert: <br/>
-        <span style={{color: convertToRgb ? 'lightseagreen' : 'grey'}} onClick={() => {setConvertToRgb(!convertToRgb); setRgbValue('')}}>HEX to RGB</span>
+      <label htmlFor='hex'>Convert: <br/>
+        <span style={{color: convertToRgb ? 'lightseagreen' : 'grey'}} onClick={() => {setConvertToRgb(true); setRgbValue('')}}>HEX to RGB</span>
         {' '}&hArr;{' '}
-        <span style={{color: convertToRgb ? 'grey' : 'lightseagreen'}} onClick={() => setConvertToRgb(!convertToRgb)}>RGB to HEX</span>
+        <span style={{color: convertToRgb ? 'grey' : 'lightseagreen'}} onClick={() => setConvertToRgb(false)}>RGB to HEX</span>
       </label>
       <div>
         { convertToRgb ? 

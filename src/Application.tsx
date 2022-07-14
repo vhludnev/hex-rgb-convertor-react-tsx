@@ -3,28 +3,22 @@ import * as React from 'react';
 import { ColorSwatch } from './components/ColorSwatch';
 import { ColorInputs } from './components/ColorInputs';
 import { ColorSliders } from './components/ColorSliders';
-import { ColorHexInput } from './components/ColorHexInput';
+import { ColorHeader } from './components/ColorHeader';
+
 
 import { ThemeContext } from './components/theme-context';
 
 const Application = () => {
   const themes = React.useContext(ThemeContext);
   const [ lightTheme, setLightTheme ] = React.useState(true)
+  const toggleTheme = () => { setLightTheme(!lightTheme) }
 
   return (
     <main style={ lightTheme ? { ...themes.light } : { ...themes.dark } }>
-      <div className='top-row'>
-        <ColorHexInput />
-        <div className='theme-btn'>
-          {!lightTheme 
-            ? <button onClick={() => setLightTheme(!lightTheme)}>&#9788;</button> 
-            : <button onClick={() => setLightTheme(!lightTheme)}>&#9789;</button>
-          }
-        </div>
-      </div>
-      <ColorSwatch />
+      <ColorHeader lightTheme={lightTheme} toggleTheme={toggleTheme} />
       <ColorInputs />
       <ColorSliders />
+      <ColorSwatch />
     </main>
   );
 };
