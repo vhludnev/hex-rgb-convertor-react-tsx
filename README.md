@@ -7,7 +7,7 @@ PS: mobile friendly <br>
 ### Run
 
 ```bash
-cloan repo
+git clone https://github.com/vhludnev/hex-rgb-convertor-react-tsx.git
 npm i
 npm start
 ```
