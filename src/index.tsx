@@ -1,4 +1,4 @@
-import { render } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
 import Application from './Application';
 
@@ -8,11 +8,12 @@ import { RGBContextProvider } from './components/context';
 import './style.scss';
 
 const rootElement = document.getElementById('root');
-render(
+const root = createRoot(rootElement as Element);
+
+root.render(
   <ThemeProvider>
     <RGBContextProvider>
       <Application />
     </RGBContextProvider>
-  </ThemeProvider>,
-  rootElement
+  </ThemeProvider>
 );
