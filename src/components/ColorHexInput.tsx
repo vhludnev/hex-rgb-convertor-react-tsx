@@ -1,6 +1,7 @@
 import * as React from "react";
 import { RGBContext } from "./context";
 
+//const hexToRgb = (hex: number | string): number[] | void => {
 const hexToRgb = (hex: any) => {
   if (hex) {
     return hex
@@ -8,7 +9,7 @@ const hexToRgb = (hex: any) => {
       ,(m: string, r: number, g: number, b: number) => '#' + r + r + g + g + b + b)
       .substring(1).match(/.{2}/g)
       .map((x: string) => parseInt(x, 16))
-  } else return
+  }
 }
 
 

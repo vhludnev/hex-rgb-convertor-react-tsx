@@ -19,24 +19,9 @@ export const ColorSliders = () => {
 
   return (
     <section className="color-sliders">
-      <ColorSlider
-        id="red-slider"
-        label="Red"
-        value={red}
-        onChange={adjustRed}
-      />
-      <ColorSlider
-        id="green-slider"
-        label="Green"
-        value={green}
-        onChange={adjustGreen}
-      />
-      <ColorSlider
-        id="blue-slider"
-        label="Blue"
-        value={blue}
-        onChange={adjustBlue}
-      />
+      <ColorSlider id="red-slider" label="Red" value={red} onChange={adjustRed} />
+      <ColorSlider id="green-slider" label="Green" value={green} onChange={adjustGreen} />
+      <ColorSlider id="blue-slider" label="Blue" value={blue} onChange={adjustBlue} />
     </section>
   );
 };

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const themes = {
+const themes: { [key: string]: React.CSSProperties } = {
   light: {
     backgroundColor: 'white',
     color: 'black',
